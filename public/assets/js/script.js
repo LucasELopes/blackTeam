@@ -1,0 +1,3 @@
+function showPassword() {
+    print('Printou!');
+}
