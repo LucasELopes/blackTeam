@@ -14,10 +14,16 @@
         </label>
         <label class="container-login-label">
             <img src="{{asset('assets/img/icone/passwordIcon.svg')}}" alt="">
-            <input type="password" name="password" placeholder="Digite sua senha" required onclick="showPassword()">
+            <input type="password" name="password" placeholder="Digite sua senha" id="inputPass" required>
+            <img 
+                id="userPass"
+                src="{{asset('assets/img/icone/showInformation.svg')}}" 
+                alt="mostrar senha" 
+                title="mostrar senha" 
+                onclick="showPassword()"
+            >
         </label>
     </form>
 </div>
-
-<script href="{{asset('assets/js/script.js')}}"></script>
+<script src="{{asset('assets/js/script.js')}}"></script>
 @endsection
