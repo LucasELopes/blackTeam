@@ -16,5 +16,4 @@ const showPassword = () => {
 
     infosImg = infosImg.join('/');
     img.setAttribute('src', infosImg);
-
 }

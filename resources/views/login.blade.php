@@ -7,12 +7,17 @@
 
 @section('content-main')
 <div class="container-login">
-    <form action="" method="post" class="container-login-inputs">
-        <label class="container-login-label">
-            <img src="{{asset('assets/img/icone/emailIcon.svg')}}" alt="email icon" required>
-            <input type="text" placeholder="Digite seu email" name="email">
+    <div class="container-login-header">
+        {{-- <img src="{{asset('assets/img/icone/userLogin.svg')}}" alt=""> --}}
+        <h1>LOGIN</h1>
+    </div>
+    <form action="/findUser" method="post" class="container-login-inputs">
+        @csrf
+        <label class="container-login-inputs-label">
+            <img src="{{asset('assets/img/icone/emailIcon.svg')}}" alt="email icon">
+            <input type="text" placeholder="Digite seu email" name="email" required>
         </label>
-        <label class="container-login-label">
+        <label class="container-login-inputs-label">
             <img src="{{asset('assets/img/icone/passwordIcon.svg')}}" alt="">
             <input type="password" name="password" placeholder="Digite sua senha" id="inputPass" required>
             <img 
@@ -23,6 +28,10 @@
                 onclick="showPassword()"
             >
         </label>
+        <div class="container-login-inputs-submit">
+            <button type="submit">Entrar</button>
+            <p>Se não possui uma conta <a href="">clique aqui</a></p>
+        </div>
     </form>
 </div>
 <script src="{{asset('assets/js/script.js')}}"></script>
