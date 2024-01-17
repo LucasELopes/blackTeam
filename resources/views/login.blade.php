@@ -2,11 +2,8 @@
 @section('title', 'Login')
 
 @section('content-header')
-    <img src="{{asset('assets/img/logo/logoLonga.png')}}" alt="logo">
-@endsection
 
 @section('content-main')
-<div class="container-login">
     <div class="container-login-header">
         {{-- <img src="{{asset('assets/img/icone/userLogin.svg')}}" alt=""> --}}
         <h1>LOGIN</h1>
@@ -30,9 +27,8 @@
         </label>
         <div class="container-login-inputs-submit">
             <button type="submit">Entrar</button>
-            <p>Se não possui uma conta <a href="">clique aqui</a></p>
+            <p>Se não possui uma conta <a href="/register">clique aqui</a></p>
         </div>
     </form>
-</div>
 <script src="{{asset('assets/js/script.js')}}"></script>
 @endsection

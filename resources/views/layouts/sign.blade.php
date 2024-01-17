@@ -11,10 +11,12 @@
 </head>
 <body>
     <header>
-        @yield('content-header')
+        <img src="{{asset('assets/img/logo/logoLonga.png')}}" alt="logo">
     </header>
     <main>
-        @yield('content-main')
+        <div class="container-login">
+            @yield('content-main')
+        </div>
     </main>
 </body>
 </html>
