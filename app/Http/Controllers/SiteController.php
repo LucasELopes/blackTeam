@@ -10,6 +10,10 @@ class SiteController extends Controller
         return view('login');
     }
 
+    public function register() {
+        return view('register');
+    }
+
     public function findUser(Request $r) {
         echo $r->password;
     }

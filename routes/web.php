@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'login']);
 Route::post('/findUser', [SiteController::class, 'findUser']);
+Route::get('/register', [SiteController::class, 'register']);
