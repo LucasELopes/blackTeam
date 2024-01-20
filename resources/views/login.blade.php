@@ -22,7 +22,7 @@
                 src="{{asset('assets/img/icone/showInformation.svg')}}" 
                 alt="mostrar senha" 
                 title="mostrar senha" 
-                onclick="showPassword()"
+                onclick="showPassword(id)"
             >
         </label>
         <div class="container-login-inputs-submit">
@@ -30,5 +30,7 @@
             <p>Se não possui uma conta <a href="/register">clique aqui</a></p>
         </div>
     </form>
-<script src="{{asset('assets/js/script.js')}}"></script>
+@endsection
+@section('script')
+    <script src="{{asset('assets/js/script.js')}}"></script>
 @endsection
