@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SiteController::class, 'login']);
-Route::post('/findUser', [SiteController::class, 'findUser']);
-Route::get('/register', [SiteController::class, 'register']);
+Route::post('/findUser', [SiteController::class, 'findUser'])->name('findUser');
+Route::get('/register', [UserController::class, 'create'])->name('register');
