@@ -62,9 +62,6 @@
         <button type="submit">Criar</button>
     </div>
 </form>
-<pre>
-    {{print_r($errors)}}
-</pre>
 @endsection
 @section('script') 
     <script src="{{asset('assets/js/script.js')}}"></script>
