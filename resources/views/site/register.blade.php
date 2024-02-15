@@ -6,19 +6,19 @@
     {{-- <img src="{{asset('assets/img/icone/userLogin.svg')}}" alt=""> --}}
     <h1>Cadastro</h1>
 </div>
-<form action="{{route('findUser')}}" method="post" class="container-login-inputs">
+<form action="{{route('site.createUser')}}" method="post" class="container-login-inputs">
     @csrf
     <label class="container-login-inputs-label">
         <img src="{{asset('assets/img/icone/userIcon.svg')}}" alt="">
-        <input type="text" name="name" placeholder="Digite seu nome" required>
+        <input type="text" name="name" placeholder="Digite seu nome" value='{{request()->old('name') ?? ''}}' required>
     </label>
     <label class="container-login-inputs-label">
-        <img src="{{asset('assets/img/icone/telephone.svg')}}" alt="email icon">
-        <input type="tel" placeholder="Digite seu número" name="telephone" required>
+        <img src="{{asset('assets/img/icone/telephone.svg')}}" alt="telephone icon">
+        <input type="tel" placeholder="Digite seu número" name="tel" value='{{request()->old('tel') ?? ''}}' required>
     </label>
     <label class="container-login-inputs-label">
         <img src="{{asset('assets/img/icone/emailIcon.svg')}}" alt="email icon">
-        <input type="email" placeholder="Digite seu email" name="email" required>
+        <input type="email" placeholder="Digite seu email" name="email" value='{{request()->old('email') ?? ''}}' required>
     </label>
     <label class="container-login-inputs-label">
         <img src="{{asset('assets/img/icone/passwordIcon.svg')}}" alt="">
@@ -62,6 +62,9 @@
         <button type="submit">Criar</button>
     </div>
 </form>
+<pre>
+    {{print_r($errors)}}
+</pre>
 @endsection
 @section('script') 
     <script src="{{asset('assets/js/script.js')}}"></script>

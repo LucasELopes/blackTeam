@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SiteController::class, 'login']);
-Route::post('/findUser', [SiteController::class, 'findUser'])->name('findUser');
-Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::controller(SiteController::class)->group(function(){
+    Route::get('/', 'login')->name('site.login');
+});
+
+Route::controller(UserController::class)->group(function(){
+    // Route::get('/register', [UserController::class, 'create'])->name('register');
+    Route::post('/register', 'store')->name('site.createUser');
+    Route::get('/register', 'create')->name('site.register');
+});

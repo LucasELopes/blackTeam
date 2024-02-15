@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pupil;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,7 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('register');
+        return view('site.register');
     }
 
     /**
@@ -27,7 +28,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'tel' => 'required|unique:pupils',
+                'email' => 'email|unique:pupils',
+                'password' => 'required'
+            ],
+            [
+                'required' => 'O campo :attributes é obrigatório!',
+                
+                'email.email' => 'email inválido',
+                'email.unique' => 'O email informado já está em uso.',
+
+                'tel.unique' => 'O número de telefone informado já está em uso.'
+            ]
+        );
+
+        Pupil::create([
+            'name' => $request->name,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        return redirect()->route('site.login');
     }
 
     /**

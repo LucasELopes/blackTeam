@@ -27,7 +27,7 @@
         </label>
         <div class="container-login-inputs-submit">
             <button type="submit">Entrar</button>
-            <p>Se não possui uma conta <a href="/register">clique aqui</a></p>
+            <p>Se não possui uma conta <a href="{{route('site.register')}}">clique aqui</a></p>
         </div>
     </form>
 @endsection
